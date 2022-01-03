@@ -21,7 +21,7 @@ app.secret_key = "rodri"
 
 uri = os.getenv("DATABASE_URL","postgresql://data.db")  # or other relevant config var
 if uri.startswith("postgres://"):
-    uri = uri.replace("postgres://", "postgresql://", 1)
+    uri = uri.replace("postgres://data.db", "postgresql://data.db", 1)
 # rest of connection code using the connection string `uri`
 
 api = Api(app)
