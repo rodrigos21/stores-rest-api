@@ -1,4 +1,4 @@
-
+import os
 
 from flask import Flask
 from security import authenticate, identity
@@ -13,7 +13,7 @@ from resources.item import Item, ItemList
 from resources.store import Store, StoreList
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://username:password@localhost:5432/data'
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL','postgresql://username:password@hostname.com')
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.secret_key = "rodri"
 api = Api(app)
