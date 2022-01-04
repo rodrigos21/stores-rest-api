@@ -17,7 +17,7 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.secret_key = "rodri"
 
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL','postgresql://srfnxnnrurbkdl:36cd7f5d7a7387a9fb10974c41a0f71e1c511b8499ddda3d8b4545acd5756c6b@ec2-3-214-190-189.compute-1.amazonaws.com:5432/de4n5fnp593i6n','sqlite:///data.db')
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL','postgresql://username:password@hostname.com')
 
 """ uri = os.getenv("DATABASE_URL","sql:///data.db")  # or other relevant config var
 if uri.startswith("postgres://"):
